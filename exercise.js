@@ -16,7 +16,21 @@ console.log("onsdags övningar");
 // När "Minska" klickas, minska värdet med 1 och uppdatera texten.
 // Syfte:
 // Öva på att hantera klickhändelser och uppdatera DOM baserat på användarinteraktion.
+let counter = 0;
+let addBtn = document.getElementById("ökaKnapp");
 
+addBtn.addEventListener("click", function () {
+  let countPlus = document.getElementById("räknare");
+  counter += 1;
+  countPlus.innerHTML = counter;
+});
+
+let reduceBtn = document.getElementById("minskaKnapp");
+reduceBtn.addEventListener("click", function () {
+  let countMinus = document.getElementById("räknare");
+  counter -= 1;
+  countMinus.innerHTML = counter;
+});
 // ------------------------------------------------------------------------
 
 // Övning 2: Formulärvalidering
@@ -34,6 +48,24 @@ console.log("onsdags övningar");
 // Syfte:
 // Öva på att hantera formulärhändelser och validera användarinmatning.
 
+let userInputWriteSomething = document.getElementById("mittFormulär");
+let createdP = document.createElement("p");
+let inputField = document.getElementById("textFält");
+userInputWriteSomething.addEventListener("submit", function (event) {
+  event.preventDefault();
+  console.log(event);
+  if (inputField.value.trim() === "") {
+    // let createdP = document.createElement("p");
+    createdP.innerText = "FEL";
+    console.log("Fel mata in en text");
+  } else {
+    createdP.innerText = "RÄTT";
+    console.log("rätt ! GJ!");
+  }
+  if (!userInputWriteSomething.contains(createdP)) {
+    userInputWriteSomething.appendChild(createdP);
+  }
+});
 // ------------------------------------------------------------------------
 
 // Övning 3: Ändra Bild vid Musöver
@@ -49,9 +81,25 @@ console.log("onsdags övningar");
 // Syfte:
 // Öva på att hantera mus-händelser och ändra attribut på element.
 
+let pic = document.getElementById("minBild");
+let originalSrc = pic.getAttribute("src");
+
+pic.addEventListener("mouseover", function () {
+  pic.setAttribute(
+    "src",
+    "https://www.shutterstock.com/shutterstock/photos/2462607155/display_1500/stock-vector-lightning-with-shield-logo-vector-electric-safety-logo-inspiration-2462607155.jpg"
+  );
+  //   console.log(pic);
+});
+
+pic.addEventListener("mouseout", function () {
+  pic.setAttribute("src", originalSrc);
+});
+
 // ------------------------------------------------------------------------
 
 // Fler övningar som mängd tränar er om gårdagens och dagens ämen finns här:
 // https://github.com/FJSX24/fjsx24vecka45/tree/wednesday-6nov-DOM-Bootcamp
 
 // Blir ni klar tidigt kan ni leka runt och lägga till nya addEventListener
+// https://www.shutterstock.com/shutterstock/photos/2462607155/display_1500/stock-vector-lightning-with-shield-logo-vector-electric-safety-logo-inspiration-2462607155.jpg
