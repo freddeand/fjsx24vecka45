@@ -52,6 +52,6 @@ console.log("onsdags övningar");
 // ------------------------------------------------------------------------
 
 // Fler övningar som mängd tränar er om gårdagens och dagens ämen finns här:
-// https://github.com/FJSX24/fjsx24vecka45/tree/wednesday-6nov-events
+// https://github.com/FJSX24/fjsx24vecka45/tree/wednesday-6nov-DOM-Bootcamp
 
 // Blir ni klar tidigt kan ni leka runt och lägga till nya addEventListener
